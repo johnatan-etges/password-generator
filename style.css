@@ -31,10 +31,54 @@ body {
     font-size: 24px;
 }
 
-.generated-password {
-
+.generator-header {
+    width: 280px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.copy-generated-password {
+.generated-password {
+    font-size: 16px;
+    letter-spacing: 2px;
+    /* TO-DO: dinamically adjust font-size and/or letter-spacing based on distance from icon */
+}
+
+.copy-generated-password img{
     width: 25px;
+}
+
+.separator {
+    height:0;
+    width: 303px;
+    justify-self: center;
+    border: 1px solid #000;
+}
+
+.generator-option {
+    width: 280px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.generator-option-label {
+    /* display: inline-block; */
+}
+
+.generator-option-label img {
+    width: 15px;
+    transform: translateY(15%);
+}
+
+#btn-generate-password {
+    width: 303px;
+    height: 50px;
+    margin-top: 30px;
+
+    font-size: 24px;
+    font-weight: 600;
 }
