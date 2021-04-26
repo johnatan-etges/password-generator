@@ -41,30 +41,34 @@ body {
 }
 
 .generated-password {
-    font-size: 16px;
-    /* letter-spacing: 2px; */
+    font-size: 14px;
     max-width: 215px;
-
     border: 0;
     outline: 0;
     /* TO-DO: dinamically adjust font-size and/or letter-spacing based on distance from icon */
 }
 
-.show-generated-password img, .hide-generated-password img, .copy-generated-password img {
+.generated-password-options {
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+
+.reveal-generated-password-show img, .blur-generated-password-show img, .copy-generated-password img {
     width: 25px;
 }
 
-.show-generated-password, .hide-generated-password {
-    transform: translateY(-15%);
+.reveal-generated-password-show, .blur-generated-password-show {
+    /* transform: translateY(-15%); */
     margin-left: 5px;
 }
 
-.hide-generated-password {
+.blur-generated-password-hide, .reveal-generated-password-hide {
     display: none;
 }
 
-.hide-generated-password-show {
-    display: block;
+.copy-generated-password-hide {
+    display: none;
 }
 
 .separator {

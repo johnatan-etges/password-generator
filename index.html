@@ -10,13 +10,37 @@
     <title>Password Generator</title>
 </head>
 <body>
+    <script type="text/javascript">
+        function handleShowHidePassWord(btnid, siblingid, type) {
+            origem = document.getElementById(btnid)
+            irmao = document.getElementById(siblingid)
+            origem.classList.remove(`${btnid}-show`)
+            origem.classList.add(`${btnid}-hide`)
+            irmao.classList.remove(`${siblingid}-hide`)
+            irmao.classList.add(`${siblingid}-show`)
+
+            document.getElementById('generated-password').type=type
+        }
+
+        function handleCopyPasswordClick() {
+            navigator.clipboard.writeText(generatedPassword = document.getElementById('generated-password').value)
+            .then(() => {return})
+            .catch(err => alert(err))
+        }
+    </script>
     <section class="generator-wrapper">
         <h1 class="generator-title">Password Generator</h1>
-        <div class="generator-header">            
-            <input type="password" class="generated-password hide-passwd" value="**************************************"/>
-            <span class="show-generated-password"><img src="./assets/show-pwd.png"/></span>
-            <span class="hide-generated-password"><img src="./assets/hide-pwd.png"/></span> <!-- hide-generated-password-show -->
-            <span class="copy-generated-password"><img src="./assets/copy.png"/></span>
+        <div class="generator-header">          
+            <input type="password" id="generated-password" class="generated-password" value="2@#.slS01557/86..,@*&"/>
+            <div class="generated-password-options">
+                <span id="reveal-generated-password" class="reveal-generated-password-show" onClick="handleShowHidePassWord(this.id, this.nextElementSibling.id, 'text')"><img src="./assets/show-pwd.png"/></span> <!-- reveal-generated-password-hide -->
+                <span id="blur-generated-password" class="blur-generated-password-hide" onClick="handleShowHidePassWord(this.id, this.previousElementSibling.id, 'password')"><img src="./assets/hide-pwd.png"/></span> <!-- blur-generated-password-show -->
+                <span id="copy-generated-password" class="copy-generated-password" onClick="handleCopyPasswordClick()"><img src="./assets/copy.png"/></span>
+
+                <!-- By default, generated password will be type password. On clicking on reveal-generated-password, the generated-password fiedl
+                    will be turned into 'type="text"' and vice-versa
+                -->
+            </div>
         </div>
         <div class="separator"></div>
         <div class="generator-option">
