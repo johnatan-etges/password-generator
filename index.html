@@ -27,6 +27,17 @@
             .then(() => {return})
             .catch(err => alert(err))
         }
+
+        function handleGeneratePasswordClick() {
+            let genPass = ''
+
+            for (let i = 0; i < 10; i++) {
+                genPass = genPass + '' + Math.floor(Math.random()*100)
+                console.log(genPass);
+            }
+
+            document.getElementById('generated-password').value = genPass
+        }
     </script>
     <section class="generator-wrapper">
         <h1 class="generator-title">Password Generator</h1>
