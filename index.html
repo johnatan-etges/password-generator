@@ -32,9 +32,8 @@
             let genPass = ''
             let lenght = document.getElementById("total_chars").value
 
-            for (let i = 0; i < 10; i++) {
-                genPass = genPass + '' + Math.floor(Math.random()*100)
-                console.log(genPass);
+            for (let i = 0; i < lenght; i++) {
+                genPass = genPass + '' + Math.floor(Math.random()*10)
             }
 
             document.getElementById('generated-password').value = genPass
