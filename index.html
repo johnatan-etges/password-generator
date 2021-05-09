@@ -41,85 +41,77 @@
     </script>
     <section class="generator-wrapper">
         <h1 class="generator-title">Password Generator</h1>
-        <div id="generator-header"class="generator-header">          
-            <!-- <input type="password" id="generated-password" class="generated-password"/>
-            <div class="generated-password-options">
-                <span id="reveal-generated-password" class="reveal-generated-password-show" onClick="handleShowHidePassWord(this.id, this.nextElementSibling.id, 'text')"><img src="./assets/show-pwd.png"/></span>
-                <span id="blur-generated-password" class="blur-generated-password-hide" onClick="handleShowHidePassWord(this.id, this.previousElementSibling.id, 'password')"><img src="./assets/hide-pwd.png"/></span>
-                <span id="copy-generated-password" class="copy-generated-password" onClick="handleCopyPasswordClick()"><img src="./assets/copy.png"/></span>
-
-                By default, generated password will be type password. On clicking on reveal-generated-password, the generated-password fiedl
-                    will be turned into 'type="text"' and vice-versa
-                -->
-            </div>
+        <div id="generator-header"class="generator-header"></div>
         </div>
         <div class="separator"></div>
-        <div class="generator-option">
-            <div class="generator-option-label">
-                <span>Use alphabetic caracters</span>
-                <span class="tip"><img src="./assets/interrogation.png"/></span>
+        <div id="generator-body">
+            <!-- <div class="generator-option">
+                <div class="generator-option-label">
+                    <span>Use alphabetic caracters</span>
+                    <span class="tip"><img src="./assets/interrogation.png"/></span>
+                </div>
+                <label class="switch">
+                    <input id="switch_alphabetic" type="checkbox"/>
+                    <span class="slider"></span>
+                </label>
             </div>
-            <label class="switch">
-                <input id="switch_alphabetic" type="checkbox"/>
-                <span class="slider"></span>
-            </label>
-        </div>
-        <div class="generator-option">
-            <div class="generator-option-label">
-                <span>Use numeric caracters</span>
-                <span class="tip"><img src="./assets/interrogation.png"/></span>
+            <div class="generator-option">
+                <div class="generator-option-label">
+                    <span>Use numeric caracters</span>
+                    <span class="tip"><img src="./assets/interrogation.png"/></span>
+                </div>
+                <label class="switch">
+                    <input id="switch_numeric" type="checkbox"/>
+                    <span class="slider"></span>
+                </label>
             </div>
-            <label class="switch">
-                <input id="switch_numeric" type="checkbox"/>
-                <span class="slider"></span>
-            </label>
-        </div>
-        <div class="generator-option">
-            <div class="generator-option-label">
-                <span>Use uppercase</span>
-                <span class="tip"><img src="./assets/interrogation.png"/></span>
+            <div class="generator-option">
+                <div class="generator-option-label">
+                    <span>Use uppercase</span>
+                    <span class="tip"><img src="./assets/interrogation.png"/></span>
+                </div>
+                <label class="switch">
+                    <input id="switch_uppercase" type="checkbox"/>
+                    <span class="slider"></span>
+                </label>
             </div>
-            <label class="switch">
-                <input id="switch_uppercase" type="checkbox"/>
-                <span class="slider"></span>
-            </label>
-        </div>
-        <div class="generator-option">
-            <div id="switch_lowercase" class="generator-option-label">
-                <span>Use alphabetic lowercase</span>
-                <span class="tip"><img src="./assets/interrogation.png"/></span>
+            <div class="generator-option">
+                <div id="switch_lowercase" class="generator-option-label">
+                    <span>Use alphabetic lowercase</span>
+                    <span class="tip"><img src="./assets/interrogation.png"/></span>
+                </div>
+                <label class="switch">
+                    <input type="checkbox"/>
+                    <span class="slider"></span>
+                </label>
             </div>
-            <label class="switch">
-                <input type="checkbox"/>
-                <span class="slider"></span>
-            </label>
-        </div>
-        <div class="generator-option">
-            <div class="generator-option-label">
-                <span>Use simple special caracters</span>
-                <span class="tip"><img src="./assets/interrogation.png"/></span>
+            <div class="generator-option">
+                <div class="generator-option-label">
+                    <span>Use simple special caracters</span>
+                    <span class="tip"><img src="./assets/interrogation.png"/></span>
+                </div>
+                <label class="switch">
+                    <input id="switch_simple_special" type="checkbox"/>
+                    <span class="slider"></span>
+                </label>
             </div>
-            <label class="switch">
-                <input id="switch_simple_special" type="checkbox"/>
-                <span class="slider"></span>
-            </label>
-        </div>
-        <div class="generator-option">
-            <div class="generator-option-label">
-                <span>Use complex special caracters</span>
-                <span class="tip"><img src="./assets/interrogation.png"/></span>
+            <div class="generator-option">
+                <div class="generator-option-label">
+                    <span>Use complex special caracters</span>
+                    <span class="tip"><img src="./assets/interrogation.png"/></span>
+                </div>
+                <label class="switch">
+                    <input id="switch_complex_special" type="checkbox"/>
+                    <span class="slider"></span>
+                </label>
             </div>
-            <label class="switch">
-                <input id="switch_complex_special" type="checkbox"/>
-                <span class="slider"></span>
-            </label>
-        </div>
-        <div class="generator-option">
-            <div class="generator-option-label">
-                <span>Total of characters</span>
-                <span class="tip"><img src="./assets/interrogation.png"/></span>
-            </div>
-            <input type="number" min=1 id="total_chars" class="total_chars"/>
+            <div class="generator-option">
+                <div class="generator-option-label">
+                    <span>Total of characters</span>
+                    <span class="tip"><img src="./assets/interrogation.png"/></span>
+                </div>
+                <input type="number" min=1 id="total_chars" class="total_chars"/>
+            </div> -->
         </div>
         <button id="btn-generate-password">Generate Password</button>
     </section>
@@ -128,6 +120,8 @@
 <script type="module">
         import { Generator } from './src/Generator.js'
         Generator.init()
+        import { GeneratorOptionsView } from './src/GeneratorOptionsView.js'
+        GeneratorOptionsView.render()
 </script>
 
 </html>
