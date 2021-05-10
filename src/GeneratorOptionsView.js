@@ -26,6 +26,10 @@ const GeneratorOptionsView = {
         },
     ],
 
+    handleSwitch(switchId) {
+        Emitter.emit(switchId)
+    },
+
     render() {
         GeneratorOptionsView.options.forEach(option => {
             document.getElementById("generator-body").innerHTML  = document.getElementById("generator-body").innerHTML +
