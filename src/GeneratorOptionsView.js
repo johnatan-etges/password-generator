@@ -43,7 +43,7 @@ const GeneratorOptionsView = {
                     <span class="tip"><img src="./assets/interrogation.png"/></span>
                 </div>
                 <label class="switch">
-                    <input id="${option.switch_id}" type="checkbox"/>
+                    <input id="${option.switch_id}" type="checkbox" onClick="() => ${GeneratorOptionsView.handleSwitch(option.switch_id)}"/>
                     <span class="slider"></span>
                 </label>
                 </div>
