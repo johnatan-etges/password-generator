@@ -1,6 +1,6 @@
 const Emitter = {
 
-    events: [],
+    events: {},
 
     on(event, cb) {
         Emitter.events[event] = Emitter.events[event] || []
