@@ -32,6 +32,9 @@ const GeneratorOptionsView = {
 
     render() {
         GeneratorOptionsView.options.forEach(option => {
+            //Registra o evento no carregamento dos elementos
+            Emitter.on(option.switch_id, () => console.log(option.switch_id))
+
             document.getElementById("generator-body").innerHTML  = document.getElementById("generator-body").innerHTML +
             `
                 <div class="generator-option">
