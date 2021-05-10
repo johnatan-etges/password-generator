@@ -1,3 +1,5 @@
+import { Emitter } from './Emitter.js'
+
 const GeneratorOptionsView = {
     options: [
         {
