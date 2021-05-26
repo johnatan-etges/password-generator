@@ -28,7 +28,7 @@ const GeneratorOptionsView = {
         },
     ],
 
-    handleSwitch(switchId) {
+    handleSwitch(switchId) {    
         Emitter.emit(switchId)
     },
 
@@ -37,7 +37,7 @@ const GeneratorOptionsView = {
             //Registra o evento no carregamento dos elementos
             Emitter.on(option.switch_id, () => console.log(option.switch_id))
 
-            document.getElementById("generator-body").innerHTML  = document.getElementById("generator-body").innerHTML +
+            /* document.getElementById("generator-body").innerHTML+=
             `
                 <div class="generator-option">
                 <div class="generator-option-label">
@@ -45,11 +45,18 @@ const GeneratorOptionsView = {
                     <span class="tip"><img src="./assets/interrogation.png"/></span>
                 </div>
                 <label class="switch">
-                    <input id="${option.switch_id}" type="checkbox" onClick="() => ${GeneratorOptionsView.handleSwitch(option.switch_id)}"/>
+                    <input id="${option.switch_id}" type="checkbox" onclick="${GeneratorOptionsView.handleSwitch(option.switch_id)}"/>
                     <span class="slider"></span>
                 </label>
                 </div>
-            `
+            ` */
+            let input = document.createElement("input")
+            input.className = "teste"
+            input.value = "teste"
+
+            document.getElementById("generator-body").appendChild(input)
+            input.onchange = () => console.log('alterou')
+
         })
     }
 }
